@@ -11,7 +11,7 @@ const BottomTab = () => {
         title={
           <div className="flex flex-col justify-center items-center">
             <FireIcon/>
-            <p style={{fontSize:"10px"}}>Photos</p>
+            <p style={{fontSize:"10px"}}>Explore</p>
           </div>
         }
       />
@@ -20,7 +20,7 @@ const BottomTab = () => {
         title={
           <div className="flex flex-col justify-center items-center">
             <ChatIcon/>
-            <p style={{fontSize:"10px"}}>Music</p>
+            <p style={{fontSize:"10px"}}>Chat</p>
           </div>
         }
       />
