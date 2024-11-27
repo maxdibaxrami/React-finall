@@ -9,7 +9,7 @@ const BottomTab = () => {
       <Tab
         key="photos"
         title={
-          <div className="flex flex-col items-center">
+          <div className="flex flex-col justify-center items-center">
             <FireIcon/>
             <p style={{fontSize:"10px"}}>Photos</p>
           </div>
@@ -18,7 +18,7 @@ const BottomTab = () => {
       <Tab
         key="music"
         title={
-          <div className="flex flex-col items-center">
+          <div className="flex flex-col justify-center items-center">
             <ChatIcon/>
             <p style={{fontSize:"10px"}}>Music</p>
           </div>
@@ -27,7 +27,7 @@ const BottomTab = () => {
       <Tab
         key="videos"
         title={
-          <div className="flex flex-col items-center">
+          <div className="flex flex-col justify-center items-center">
             <ProfileIcon/>
             <p style={{fontSize:"10px"}}>Profile</p>
           </div>
