@@ -2,3 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
+
+
+.botton-tab--tabs{ 
+    width: 55px;
+    height: 55px;
+}

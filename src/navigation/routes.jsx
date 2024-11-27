@@ -1,16 +1,8 @@
 import Home from '@/pages/Home';
+import RegisterPage from '@/pages/Register'; // Fixed typo
 
-/**
- * @typedef {object} Route
- * @property {string} path
- * @property {import('react').ComponentType} Component
- * @property {string} [title]
- * @property {import('react').JSX.Element} [icon]
- */
-
-/**
- * @type {Route[]}
- */
 export const routes = [
   { path: '/', Component: Home },
+  { path: '/register', Component: RegisterPage }
+
 ];

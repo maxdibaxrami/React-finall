@@ -44,7 +44,7 @@ export function Inner() {
 
   return (
     <TonConnectUIProvider manifestUrl={manifestUrl}>
-      <SDKProvider acceptCustomStyles debug={debug}>
+      <SDKProvider acceptCustomStyles >
         <App/>
       </SDKProvider>
     </TonConnectUIProvider>

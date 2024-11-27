@@ -16,12 +16,10 @@ import {
   Router,
   Routes,
 } from 'react-router-dom';
-
+import { NextUIProvider } from "@nextui-org/react";
 import { routes } from '@/navigation/routes.jsx';
 
-/**
- * @return {JSX.Element}
- */
+
 export function App() {
   const lp = useLaunchParams();
   const miniApp = useMiniApp();
@@ -43,13 +41,9 @@ export function App() {
     }
   }, [viewport]);
 
-  // Create a new application navigator and attach it to the browser history, so it could modify
-  // it and listen to its changes.
   const navigator = useMemo(() => initNavigator('app-navigation-state'), []);
   const [location, reactNavigator] = useIntegration(navigator);
 
-  // Don't forget to attach the navigator to allow it to control the BackButton state as well
-  // as browser history.
   useEffect(() => {
     navigator.attach();
     return () => navigator.detach();
@@ -60,12 +54,18 @@ export function App() {
       appearance={miniApp.isDark ? 'dark' : 'light'}
       platform={['macos', 'ios'].includes(lp.platform) ? 'ios' : 'base'}
     >
-      <Router location={location} navigator={reactNavigator}>
-        <Routes>
-          {routes.map((route) => <Route key={route.path} {...route} />)}
-          <Route path='*' element={<Navigate to='/'/>}/>
-        </Routes>
-      </Router>
+      <NextUIProvider>
+        <Router location={location} navigator={reactNavigator}>
+          <Routes>
+            
+            {routes.map((route) => (
+              <Route key={route.path} path={route.path} element={<route.Component />} />
+            ))}
+
+            <Route path='*' element={<Navigate to='/' />} />
+          </Routes>
+        </Router>
+      </NextUIProvider>
     </AppRoot>
   );
 }
