@@ -5,7 +5,7 @@ import {ProfileIcon, ChatIcon, FireIcon} from "@/icons/Icons"
 
 const BottomTab = () => {
   return <div className="flex w-full flex-col fixed bottom-6 items-center w-full">
-    <Tabs classNames={{tab:"botton-tab--tabs"}} aria-label="Options" color="primary" variant="solid">
+    <Tabs classNames={{tab:"botton-tab--tabs",base:"background-menu"}} aria-label="Options" color="primary" variant="light">
       <Tab
         key="photos"
         title={
